@@ -21,6 +21,18 @@ double fac_tr(int n)
   return fac_tr_aux(n, 1);
 }
 
+double fac_it(int n)
+{
+  double acc = 1;
+
+  for (int i = n; i > 1; i--)
+  {
+    acc = acc * i;
+  }
+
+  return acc;
+}
+
 static napi_value Factorial_aux(napi_env env, napi_callback_info info, double (*funcp)(int))
 {
   napi_status status;
@@ -70,6 +82,11 @@ static napi_value Factorial_tr(napi_env env, napi_callback_info info)
   return Factorial_aux(env, info, &fac_tr);
 }
 
+static napi_value Factorial_it(napi_env env, napi_callback_info info)
+{
+  return Factorial_aux(env, info, &fac_it);
+}
+
 #define DECLARE_NAPI_METHOD(name, func)     \
   {                                         \
     name, 0, func, 0, 0, 0, napi_default, 0 \
@@ -80,9 +97,10 @@ napi_value Init(napi_env env, napi_value exports)
   napi_status status;
   napi_property_descriptor desc[] = {
       DECLARE_NAPI_METHOD("factorial", Factorial),
-      DECLARE_NAPI_METHOD("factorial_tr", Factorial_tr)};
+      DECLARE_NAPI_METHOD("factorial_tr", Factorial_tr),
+      DECLARE_NAPI_METHOD("factorial_it", Factorial_it)};
 
-  status = napi_define_properties(env, exports, 2, desc);
+  status = napi_define_properties(env, exports, 3, desc);
 
   assert(status == napi_ok);
 
