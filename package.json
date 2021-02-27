@@ -1,0 +1,30 @@
+{
+  "name": "haddley-factorial-cc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "addon.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Haddley/haddley-factorial-cc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Haddley/haddley-factorial-cc/issues"
+  },
+  "homepage": "https://github.com/Haddley/haddley-factorial-cc#readme",
+  "dependencies": {
+    "bindings": "~1.2.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.0",
+    "mocha": "^8.3.0"
+  }
+}
