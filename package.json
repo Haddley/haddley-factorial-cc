@@ -1,6 +1,6 @@
 {
   "name": "haddley-factorial-cc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "addon.js",
   "directories": {
